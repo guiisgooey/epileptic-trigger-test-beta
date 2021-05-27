@@ -9,11 +9,13 @@ def frame_test(file_path):
     t = 0
     last_stat = None
     x = 0
+    i = 0
     assert(isgif(file_path)==True)
     if(isurl(file_path)):
         file_path = BytesIO(urllib.request.urlopen(file_path).read())
     im = Image.open(file_path)
     x = im.n_frames
+    threshold = math.ceil(x / 3)
     if x == 1:
         return False
     for i in range(x):
@@ -26,8 +28,10 @@ def frame_test(file_path):
         stat = ImageStat.Stat(frame)
         if last_stat:
             t = t_test(stat, last_stat)
-            if(t >= 100):
-                e = True
+            if(t >= (stat.count[0] * .000625)):
+                i += 1
+                if i >= threshold:
+                    e = True
         last_stat = stat
     return e
 
