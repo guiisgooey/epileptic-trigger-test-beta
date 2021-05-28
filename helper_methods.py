@@ -1,39 +1,6 @@
-import os, math, urllib, urllib.request
-from os.path import isfile
+import os, urllib, urllib.request, math
 from io import BytesIO
-from PIL import Image, ImageStat
-
-def frame_test(file_path):
-    """Converts provided GIF into individual frames and compares frames to see if it is flashing."""
-    e = False
-    t = 0
-    last_stat = None
-    x = 0
-    i = 0
-    assert(isgif(file_path)==True)
-    if(isurl(file_path)):
-        file_path = BytesIO(urllib.request.urlopen(file_path).read())
-    im = Image.open(file_path)
-    x = im.n_frames
-    threshold = math.ceil(x / 3)
-    if x == 1:
-        return False
-    for i in range(x):
-        if e == True:
-            return e
-        im.seek(i)
-        frames_obj = BytesIO()
-        im.save(frames_obj, 'PNG')
-        frame = Image.open(frames_obj)
-        stat = ImageStat.Stat(frame)
-        if last_stat:
-            t = t_test(stat, last_stat)
-            if(t >= (stat.count[0] * .000625)):
-                i += 1
-                if i >= threshold:
-                    e = True
-        last_stat = stat
-    return e
+from PIL import Image
 
 def isurl(file_path):
     """Checks if the provided file path is a url."""
@@ -50,7 +17,7 @@ def isurl(file_path):
 def isgif(file_path):
     """Checks if file path directs to a gif or list of frames."""
     file_ext = ''
-    if isfile(file_path):
+    if os.path.isfile(file_path):
         try:
             file_ext = os.path.splitext(file_path)[1]
         except:
@@ -96,4 +63,3 @@ def t_test(image1, image2):
     if t < 0:
         t *= -1
     return t
-    

@@ -98,9 +98,7 @@ $ python3 main.py
 
 ### epilepsy_test.py
 
-epilepsy_test.py provides the functions used to determine if a gif may be harmful to a viewer with epilepsy or light sensitivity. Helper methods and inner functions within epilepsy_test.py are only there to make the code appear cleanlier.
-
-### epilepsy_test_video.py (work-in-progress)
+### epilepsy_test_video.py
 
 epilepsy_test_video.py currently provides the base frame test used in epilepsy_test.py converted to be used for videos. Further tests will be added in the future such as the split test and a sound level test.
 
@@ -122,5 +120,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Sources
 
-- [Pillow](https://pillow.readthedocs.io/en/stable/) for insight into how the PIL library works for processing and mutating images.
+- [Pillow](https://pillow.readthedocs.io/en/stable/) for insight into how the PIL library works for processing images.
 - [OpenCV](https://pypi.org/project/opencv-python/) for insight into how the OpenCV python library works for processing videos.
