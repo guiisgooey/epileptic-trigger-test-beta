@@ -58,7 +58,9 @@ def isgif(file_path):
 def t_test(image1, image2):
     """Performs a Student's t-test for the provided images."""
     num = image1.rms[0] - image2.rms[0]
-    denom = math.sqrt((image1.stddev[0]**2/image1.count[0]) + (image2.stddev[0]**2/image2.count[0]))
+    denom = math.sqrt(((image1.stddev[0]**2)/image1.count[0]) + ((image2.stddev[0]**2)/image2.count[0]))
+    if denom == 0:
+        return 0
     t = num / denom
     if t < 0:
         t *= -1

@@ -1,0 +1,7 @@
+{% for gif in gifs %} {%if not gif[0] %}
+<img class="gif" src="{{gif[1]['media'][0]['gif']['url']}}" />
+<p>{{gif[0]}}</p>
+{% else %}
+<img class="gif2" src="{{gif[1]['media'][0]['gif']['url']}}" />
+<p>{{gif[0]}}</p>
+{% endif %} {% endfor %}

@@ -9,3 +9,7 @@
 .history/
 
 env/
+
+.env
+.env.local
+.env.staging

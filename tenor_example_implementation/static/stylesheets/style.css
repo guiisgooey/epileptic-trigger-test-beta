@@ -1,0 +1,25 @@
+#header {
+  margin: 20px;
+  text-align: center;
+}
+
+#gif_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gif {
+  border-radius: 5px;
+  max-width: 250px;
+  flex: 1 0 30%;
+  padding: 5px;
+}
+
+.gif2 {
+  border-radius: 5px;
+  max-width: 250px;
+  flex: 1 0 30%;
+  padding: 5px;
+  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+  filter: blur(50px);
+}
