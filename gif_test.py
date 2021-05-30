@@ -27,8 +27,8 @@ def frame_brightness_test(file_path):
         if(last_stat):
             t = t_test(last_stat, stat)
             if(t >= (stat.count[0] * .000625)):
-                i += 1
-                if i >= threshold:
+                n += 1
+                if n >= threshold:
                     e = True
         last_stat = stat
     return e
