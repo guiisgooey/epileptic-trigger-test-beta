@@ -10,16 +10,34 @@
 }
 .gif {
   border-radius: 5px;
-  max-width: 250px;
-  flex: 1 0 30%;
+  max-width: 240px;
+  max-height: 240px;
   padding: 5px;
+  z-index: -1;
+  position: relative;
 }
 
-.gif2 {
+#gif_cover {
+  color: white;
+  background-color: black;
   border-radius: 5px;
   max-width: 250px;
   flex: 1 0 30%;
   padding: 5px;
-  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
-  filter: blur(50px); /*still bad find a way to just completely cover*/
+  z-index: 1;
+}
+
+#gif_cover:focus {
+  z-index: -1;
+}
+
+#gif_cover:focus > img {
+  z-index: 1;
+}
+
+#gif_cover > p {
+  z-index: 2;
+  position: relative;
+  flex: 1 0 30%;
+  padding: 5px;
 }

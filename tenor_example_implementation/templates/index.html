@@ -1,18 +1,9 @@
-{% extends 'base.html' %}
-
-{% block title %}
-    {{title}}
-{% endblock %}
-
-{% block content %}
-    <div class="jumbotron" id="header">
-        <h1 class="display-3">GIF Search</h1>
-        <p class="lead">Graphics Interchange Format Search</p>
-        <div class="col-md-4 offset-md-4">
-            {% include 'searchBar.html' %}
-        </div>
-    </div>
-    <div class="col-md-8 offset-md-2" id="gif_container">
-        {% include 'gifs.html' %}
-    </div>
+{% extends 'base.html' %} {% block title %} {{title}} {% endblock %} {% block
+content %}
+<div class="jumbotron" id="header">
+  <h1 class="display-3">GIF Search</h1>
+  <p class="lead">Graphics Interchange Format Search</p>
+  <div class="col-md-4 offset-md-4">{% include 'searchBar.html' %}</div>
+</div>
+<div class="col-md-8 offset-md-2">{% include 'gifs.html' %}</div>
 {% endblock %}

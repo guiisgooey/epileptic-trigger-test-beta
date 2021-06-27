@@ -2,6 +2,12 @@
 <img class="gif" src="{{gif[1]['media'][0]['gif']['url']}}" />
 <p>{{gif[0]}}</p>
 {% else %}
-<img class="gif2" src="{{gif[1]['media'][0]['gif']['url']}}" />
+<button type="button" id="gif_cover">
+  <p>
+    The following GIF has been detected to contain material that may be harmful
+    for users with photosensitivity. Click here to view it anyways.
+  </p>
+  <img class="gif" src="{{gif[1]['media'][0]['gif']['url']}}" />
+</button>
 <p>{{gif[0]}}</p>
 {% endif %} {% endfor %}

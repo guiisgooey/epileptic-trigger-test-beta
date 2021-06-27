@@ -1,18 +1,20 @@
 import cv2, math, urllib.request
 from io import BytesIO
 from PIL import Image, ImageStat
-from helper_methods import isurl, t_test
+from helper_methods import isurl, t_test, isvideo
 
 def frame_brightness_test(file_path):
     """Converts provided GIF into individual frames and compares frames to see if it is flashing."""
     e = False
     last_stat = None
     i = 0
+    if(isvideo(file_path)):
+        pass
     if(isurl(file_path)):
         file_path = BytesIO(urllib.request.urlopen(file_path).read())
     cap = cv2.VideoCapture(file_path)
     x = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    threshold = math.ceil(x / 5)
+    threshold = math.ceil(x / 20)
     if x == 1:
         return e
     for _ in range(x):

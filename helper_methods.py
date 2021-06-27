@@ -55,6 +55,9 @@ def isgif(file_path):
         print('The provided file path is not a file, url, BytesIO file or a list of images. \n Please ensure you are providing one of these data types.')
         return False
 
+def isvideo(file_path):
+    pass
+
 def t_test(image1, image2):
     """Performs a Student's t-test for the provided images."""
     num = image1.rms[0] - image2.rms[0]

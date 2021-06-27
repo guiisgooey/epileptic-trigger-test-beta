@@ -1,19 +1,18 @@
 import math, urllib.request
 from io import BytesIO
 from PIL import Image, ImageStat
-from helper_methods import isurl, isgif, t_test
+from helper_methods import isurl, t_test
 
 def frame_brightness_test(file_path):
     """Converts provided GIF into individual frames and compares frames to see if it is flashing."""
     e = False
     last_stat = None
     n = 0
-    assert(isgif(file_path)==True)
     if(isurl(file_path)):
         file_path = BytesIO(urllib.request.urlopen(file_path).read())
     im = Image.open(file_path)
     x = im.n_frames
-    threshold = math.ceil(x / 10)
+    threshold = math.ceil(x / 20)
     if x == 1:
         return e
     for i in range(x):

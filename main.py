@@ -1,4 +1,6 @@
 from gif_test import frame_brightness_test
+from helper_methods import isgif, isurl, isvideo
+
 #from epilepsy_test_video import video_frame_test
 
 file_path = 'gifs/flashing 4.gif'
