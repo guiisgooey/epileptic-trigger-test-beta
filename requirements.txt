@@ -1,2 +1,5 @@
 opencv-python
 pillow
+Flask
+requests
+dotenv
